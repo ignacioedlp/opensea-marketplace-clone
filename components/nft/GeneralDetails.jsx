@@ -15,7 +15,7 @@ const style = {
   likeIcon: `mr-1`,
   actionButtonsContainer: `w-44`,
   actionButtons: `flex container justify-between text-[1.4rem] border-2 rounded-lg`,
-  actionButton: `my-2`,
+  actionButton: `my-2 `,
   divider: `border-r-2`,
 }
 
@@ -27,7 +27,9 @@ function GeneralDetails({ selectedNft }) {
   return (
     <div className={style.wrapper}>
       <div className={style.infoContainer}>
-        <div className={style.accent}>Bored Ape Toxe Club</div>
+        <div className={`text-2xl ${style.accent}`}>
+          Bored Ape Toxe Club
+        </div>
         <div className={style.nftTitle}>{selectedNft?.name}</div>
         <div className={style.otherInfo}>
           <div className={style.ownedBy}>
