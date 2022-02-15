@@ -88,20 +88,13 @@ function Collection() {
     }`
 
     const collectionData = await sanityClient.fetch(query)
-
-    console.log(collectionData, '🔥')
-    
-    // the query returns 1 object inside of an array
     await setCollection(collectionData[0])
   }
 
   useEffect(() => {
     fetchCollectionData()
-    console.log(nfts)
   }, [collectionId])
 
-  // console.log(router.query)
-  // console.log(router.query.collectionId)
 
   return (
     <div className="overflow-hidden">

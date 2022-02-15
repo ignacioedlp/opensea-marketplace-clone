@@ -1,9 +1,9 @@
-import { Header } from './index.js'
+import { Adver } from './index.js'
 
 export default function Layout({ children }) {
   return (
     <>
-      <Header />
+      <Adver />
       <main>{children}</main>
     </>
   )
