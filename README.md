@@ -1,4 +1,5 @@
 # Opensea marketplace clone
-#In development
+# In development
+
 ![opensea](./opensea.png)
 
