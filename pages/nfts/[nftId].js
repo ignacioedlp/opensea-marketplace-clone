@@ -12,10 +12,10 @@ import {
 
 const style = {
   wrapper: `flex flex-col items-center container-lg text-[#e5e8eb]`,
-  container: `container p-6`,
-  topContent: `flex`,
-  nftImgContainer: `flex-1 mr-4`,
-  detailsContainer: `flex-[2] ml-4`,
+  container: `container p-6 `,
+  topContent: `flex sm:flex-row flex-col items-center`,
+  nftImgContainer: `flex-1 md:mr-4`,
+  detailsContainer: `flex-[2] md:ml-4 w-full mt-8 `,
 }
 
 const Nft = () => {
@@ -63,7 +63,7 @@ const Nft = () => {
   }, [marketPlaceModule])
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <div className={style.wrapper}>
         <div className={style.container}>

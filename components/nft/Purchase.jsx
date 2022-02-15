@@ -4,8 +4,8 @@ import { IoMdWallet } from 'react-icons/io'
 import toast, { Toaster } from 'react-hot-toast'
 
 const style = {
-  button: `mr-8 flex items-center py-2 px-12 rounded-lg cursor-pointer`,
-  buttonIcon: `text-xl`,
+  button: ` w-1/2 justify-center flex items-center m-3 p-2 h-1/2 rounded-lg cursor-pointer`,
+  buttonIcon: `text-xl `,
   buttonText: `ml-2 text-lg font-semibold`,
 }
 
@@ -62,8 +62,8 @@ function Purchase({ isListed, selectedNft, listings, marketPlaceModule }) {
   }
 
   return (
-    <div className="flex h-20 w-full items-center rounded-lg border border-[#151c22] bg-[#303339] px-12">
-      <Toaster position="bottom-left" reverseOrder={false} />
+    <div className="flex h-20 w-full  items-center rounded-lg border border-[#151c22] bg-[#303339] ">
+      <Toaster position="top-center" reverseOrder={false} />
       {isListed === 'true' ? (
         <>
           <div
