@@ -6,5 +6,7 @@ module.exports = {
   theme: {
     extend: {},
   },
+  //poner el tema en dark theme
+  darkMode: 'class',
   plugins: [],
 }
