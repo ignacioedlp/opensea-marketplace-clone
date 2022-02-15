@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-
 import { HiTag } from 'react-icons/hi'
 import { IoMdWallet } from 'react-icons/io'
 import toast, { Toaster } from 'react-hot-toast'

@@ -1,12 +1,14 @@
-import Header from '../../components/Header'
 import { useEffect, useMemo, useState } from 'react'
 import { useWeb3 } from '@3rdweb/hooks'
 import { ThirdwebSDK } from '@3rdweb/sdk'
 import { useRouter } from 'next/router'
-import NFTImage from '../../components/nft/NFTImage'
-import GeneralDetails from '../../components/nft/GeneralDetails'
-import ItemActivity from '../../components/nft/ItemActivity'
-import Purchase from '../../components/nft/Purchase'
+import {
+  NFTImage,
+  GeneralDetails,
+  ItemActivity,
+  Purchase,
+  Header,
+} from '../../components/index.js'
 
 const style = {
   wrapper: `flex flex-col items-center container-lg text-[#e5e8eb]`,
@@ -25,9 +27,7 @@ const Nft = () => {
   const nftModule = useMemo(() => {
     if (!provider) return
 
-    const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-    )
+    const sdk = new ThirdwebSDK(provider.getSigner())
     //0xdE026Bbe407dddD51923652875c7f026AA19557b => wallet collction
     return sdk.getNFTModule('0xdE026Bbe407dddD51923652875c7f026AA19557b')
   }, [provider])
@@ -47,9 +47,7 @@ const Nft = () => {
   const marketPlaceModule = useMemo(() => {
     if (!provider) return
 
-    const sdk = new ThirdwebSDK(
-      provider.getSigner(),
-    )
+    const sdk = new ThirdwebSDK(provider.getSigner())
 
     return sdk.getMarketplaceModule(
       //0xE89137E7F77378fb9e0c795Dcd4Ca4efC0012F1c => wallet marketPlace

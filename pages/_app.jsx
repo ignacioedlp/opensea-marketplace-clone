@@ -1,20 +1,20 @@
 import '../styles/globals.css'
-import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
+import { ThirdwebWeb3Provider } from '@3rdweb/hooks'
 
-
-const supportedChainIds = [4]; 
+const supportedChainIds = [4]
 const connectors = {
   injected: {},
 }
 
 function MyApp({ Component, pageProps }) {
-  
   return (
     <ThirdwebWeb3Provider
       supportedChainIds={supportedChainIds}
       connectors={connectors}
     >
-      <Component {...pageProps} />
+      
+        <Component {...pageProps} />
+      
     </ThirdwebWeb3Provider>
   )
 }
