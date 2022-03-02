@@ -42,26 +42,33 @@ export default function Home() {
   }, [address])
 
   return (
-    <div className={style.wrapper}>
-      <Toaster position="top-center" reverseOrder={false} />
-      {address ? (
-        <>
-          <Header />
-          <Hero />
-        </>
-      ) : (
-        <div className={style.walletConnectWrapper}>
-          <div
-            className={style.button}
-            onClick={() => connectWallet('injected')}
-          >
-            Connect Wallet
+    <div>
+      <Head>
+        <title>Opeasea Clone</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className={style.wrapper}>
+        <Toaster position="top-center" reverseOrder={false} />
+        {address ? (
+          <>
+            <Header />
+            <Hero />
+          </>
+        ) : (
+          <div className={style.walletConnectWrapper}>
+            <div
+              className={style.button}
+              onClick={() => connectWallet('injected')}
+            >
+              Connect Wallet
+            </div>
+            <div className={style.details}>
+              {error ? error.message : 'Connect to your wallet to continue'}
+            </div>
           </div>
-          <div className={style.details}>
-            {error ? error.message : 'Connect to your wallet to continue'}
-          </div>
-        </div>
-      )}
+        )}
+      </main>
     </div>
+    
   )
 }
