@@ -9,6 +9,7 @@ import {
   Purchase,
   Header,
 } from '../../components/index.js'
+import Head from 'next/head'
 
 const style = {
   wrapper: `flex flex-col items-center container-lg text-[#e5e8eb]`,
@@ -63,28 +64,34 @@ const Nft = () => {
   }, [marketPlaceModule])
 
   return (
-    <div className="overflow-hidden">
-      <Header />
-      <div className={style.wrapper}>
-        <div className={style.container}>
-          <div className={style.topContent}>
-            <div className={style.nftImgContainer}>
-              <NFTImage selectedNft={selectedNft} />
+    <div>
+    <Head>
+        <title>NFT</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className="overflow-hidden">
+        <Header />
+        <div className={style.wrapper}>
+          <div className={style.container}>
+            <div className={style.topContent}>
+              <div className={style.nftImgContainer}>
+                <NFTImage selectedNft={selectedNft} />
+              </div>
+              <div className={style.detailsContainer}>
+                <GeneralDetails selectedNft={selectedNft} />
+                <Purchase
+                  isListed={router.query.isListed}
+                  listings={listings}
+                  selectedNft={selectedNft}
+                  marketPlaceModule={marketPlaceModule}
+                />
+              </div>
             </div>
-            <div className={style.detailsContainer}>
-              <GeneralDetails selectedNft={selectedNft} />
-              <Purchase
-                isListed={router.query.isListed}
-                listings={listings}
-                selectedNft={selectedNft}
-                marketPlaceModule={marketPlaceModule}
-              />
-            </div>
+            <ItemActivity />
           </div>
-          <ItemActivity />
         </div>
-      </div>
-    </div>
+      </main>
+  </div>
   )
 }
 
